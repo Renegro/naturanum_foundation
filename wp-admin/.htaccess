@@ -1,0 +1,4 @@
+AuthName "GRPP - the gropper area"
+AuthType Basic
+AuthUserFile kunden/487183_07745/webseiten/grpp/.htpasswd
+require valid-user
