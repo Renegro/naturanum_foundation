@@ -4,23 +4,22 @@ $grid_columns = 4; ?>
 
 <?php if( 0 === ( $wp_query->current_post  )  % $grid_columns ): ?>
 
-    <div class="row archive-grid" data-equalizer> <!--Begin Row:--> 
+    <div class="row collapse archive-grid"> <!--Begin Row:-->
 
 <?php endif; ?> 
 
 		<!--Item: -->
-		<div class="large-3 medium-3 columns panel" data-equalizer-watch>
-		
+		<div class="large-3 medium-3 columns panel" >
+
+            <?php $background = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
-			
-				<section class="featured-image" itemprop="articleBody">
-					<?php the_post_thumbnail('full'); ?>
-				</section> <!-- end article section -->
-			
+                <div class="article-bg" style="background-image: url('<?php echo $background[0]; ?>')"></div>
+
 				<header class="article-header">
-					<h3 class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>	
+					<h3 class="title"><?php the_title(); ?></h3>
 					<?php get_template_part( 'parts/content', 'byline' ); ?>				
-				</header> <!-- end article header -->	
+				</header> <!-- end article header -->
+                <a class="article-link" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"></a>
 								
 				<section class="entry-content" itemprop="articleBody">
 					<?php the_content('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?> 
