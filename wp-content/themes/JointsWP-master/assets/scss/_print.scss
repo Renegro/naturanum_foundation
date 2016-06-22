@@ -15,7 +15,7 @@ to display none.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    filter:none !important;
+    filter: none !important;
     -ms-filter: none !important;
   }
 
@@ -57,27 +57,29 @@ to display none.
     max-width: 100% !important;
   }
 
-    @page {
-      margin: 0.5cm;
-    }
+  @page {
+    margin: 0.5cm;
+  }
 
-    p, h2, h3 {
-      orphans: 3;
-      widows: 3;
-    }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 
-    // Hide content people who print don't need to see
-    .sidebar,
-    .page-navigation,
-    .wp-prev-next,
-    .respond-form,
-    nav {
-      display: none;
-    }
-    
-} // End of media query
+  // Hide content people who print don't need to see
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none;
+  }
+
+}
+
+// End of media query

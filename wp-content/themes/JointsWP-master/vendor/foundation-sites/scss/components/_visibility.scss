@@ -30,8 +30,7 @@
     @media screen and (max-width: $lower-bound) {
       display: none !important;
     }
-  }
-  @else {
+  } @else {
     $upper-bound: -zf-bp-to-em($upper-bound-size);
 
     @media screen and (max-width: $lower-bound), screen and (min-width: $upper-bound) {
@@ -39,7 +38,6 @@
     }
   }
 }
-
 
 /// Show an element by default, and hide it above a certain screen size.
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**

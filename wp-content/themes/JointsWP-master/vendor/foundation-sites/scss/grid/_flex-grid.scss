@@ -30,8 +30,7 @@
       margin-left: 0;
       margin-right: 0;
     }
-  }
-  @else {
+  } @else {
     max-width: $width;
     margin-left: auto;
     margin-right: auto;
@@ -60,8 +59,7 @@
 
   @if $columns == shrink {
     $flex: 0 0 auto;
-  }
-  @else if $columns != null {
+  } @else if $columns != null {
     $flex: 0 0 grid-column($columns);
   }
 
@@ -89,8 +87,7 @@
         padding-right: $padding;
       }
     }
-  }
-  @else if type-of($gutter) == 'number' and strip-unit($gutter) > 0 {
+  } @else if type-of($gutter) == 'number' and strip-unit($gutter) > 0 {
     $padding: rem-calc($gutter) / 2;
     padding-left: $padding;
     padding-right: $padding;
@@ -165,7 +162,9 @@
     }
 
     &.collapse {
-      > .column { @include grid-col-collapse; }
+      > .column {
+        @include grid-col-collapse;
+      }
     }
   }
 
@@ -243,13 +242,17 @@
 
     // Responsive collapsing
     .#{$-zf-size}-collapse {
-      > .column { @include grid-col-collapse; }
+      > .column {
+        @include grid-col-collapse;
+      }
     }
 
     .#{$-zf-size}-uncollapse {
       $gutter: -zf-get-bp-val($grid-column-gutter, $-zf-size);
 
-      > .column { @include grid-col-uncollapse($gutter); }
+      > .column {
+        @include grid-col-uncollapse($gutter);
+      }
     }
   }
 

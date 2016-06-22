@@ -34,8 +34,7 @@ $buttongroup-expand-max: 6 !default;
     display: flex;
     flex-wrap: nowrap;
     align-items: stretch;
-  }
-  @else {
+  } @else {
     font-size: 0;
   }
 
@@ -72,8 +71,7 @@ $buttongroup-expand-max: 6 !default;
   #{$selector} {
     @if $global-flexbox {
       flex: 1 1 0px;
-    }
-    @else {
+    } @else {
       @for $i from 2 through $buttongroup-expand-max {
         &:first-child:nth-last-child(#{$i}) {
           &, &:first-child:nth-last-child(#{$i}) ~ #{$selector} {
@@ -103,18 +101,16 @@ $buttongroup-expand-max: 6 !default;
   #{$selector} {
     @if $global-flexbox {
       flex: 0 0 100%;
-      margin-#{$global-right}: 0; 
-    }
-    @else {
+      margin-#{$global-right}: 0;
+    } @else {
       width: 100%;
       border-#{$global-right}: $buttongroup-spacing solid transparent;
     }
-    
+
     &:not(:last-child) {
       @if $global-flexbox {
         margin-bottom: $buttongroup-spacing;
-      }
-      @else {
+      } @else {
         border-bottom: $buttongroup-spacing solid $body-background;
       }
     }
@@ -130,8 +126,7 @@ $buttongroup-expand-max: 6 !default;
   #{$selector} {
     @if $global-flexbox {
       flex: 1 1 0px;
-    }
-    @else {
+    } @else {
       width: auto;
     }
 
@@ -153,7 +148,9 @@ $buttongroup-expand-max: 6 !default;
     }
 
     // Even-width Group
-    &.expanded { @include button-group-expand; }
+    &.expanded {
+      @include button-group-expand;
+    }
 
     // Colors
     @each $name, $color in $foundation-palette {
@@ -161,8 +158,7 @@ $buttongroup-expand-max: 6 !default;
         &.#{$name} #{$buttongroup-child-selector} {
           @include button-style($color, auto, auto);
         }
-      }
-      @else {
+      } @else {
         &.#{$name} #{$buttongroup-child-selector} {
           @include button-hollow;
           @include button-hollow-style($color);

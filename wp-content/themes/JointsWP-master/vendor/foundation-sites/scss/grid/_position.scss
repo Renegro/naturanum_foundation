@@ -15,13 +15,11 @@
 
     position: relative;
     #{$global-left}: $offset;
-  }
-  @else if $position == center {
+  } @else if $position == center {
     float: none;
     margin-left: auto;
     margin-right: auto;
-  }
-  @else {
+  } @else {
     @warn 'Wrong syntax for grid-column-position(). Enter a positive or negative number, or center.';
   }
 }

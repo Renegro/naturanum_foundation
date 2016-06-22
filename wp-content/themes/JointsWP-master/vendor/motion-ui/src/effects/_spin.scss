@@ -19,9 +19,9 @@
   }
 
   $keyframes: (
-    name: 'spin-#{$direction}-#{$amount}',
-    0: (transform: rotate($start)),
-    100: (transform: rotate($end)),
+          name: 'spin-#{$direction}-#{$amount}',
+          0: (transform: rotate($start)),
+          100: (transform: rotate($end)),
   );
 
   @return $keyframes;

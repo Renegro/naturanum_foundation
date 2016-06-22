@@ -29,9 +29,9 @@ $dropdown-radius: $global-radius !default;
 /// Sizes for dropdown panes. Each size is a CSS class you can apply.
 /// @type Map
 $dropdown-sizes: (
-  tiny: 100px,
-  small: 200px,
-  large: 400px,
+        tiny: 100px,
+        small: 200px,
+        large: 400px,
 ) !default;
 
 /// Applies styles for a basic dropdown.

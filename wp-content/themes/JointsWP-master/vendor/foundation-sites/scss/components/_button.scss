@@ -41,10 +41,10 @@ $button-radius: $global-radius !default;
 /// Sizes for buttons.
 /// @type Map
 $button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+        tiny: 0.6rem,
+        small: 0.75rem,
+        default: 0.9rem,
+        large: 1.25rem,
 ) !default;
 
 /// opacity for a disabled button.
@@ -81,8 +81,7 @@ $button-opacity-disabled: 0.25 !default;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-  }
-  @else {
+  } @else {
     display: inline-block;
     width: auto;
     margin: $button-margin;
@@ -177,8 +176,7 @@ $button-opacity-disabled: 0.25 !default;
 
   @if $style == solid {
     @include button-style($background, $background-hover, $color);
-  }
-  @else if $style == hollow {
+  } @else if $style == hollow {
     @include button-hollow;
     @include button-hollow-style($background);
   }
@@ -199,7 +197,9 @@ $button-opacity-disabled: 0.25 !default;
       }
     }
 
-    &.expanded { @include button-expand; }
+    &.expanded {
+      @include button-expand;
+    }
 
     // Colors
     @each $name, $color in $foundation-palette {
@@ -207,8 +207,7 @@ $button-opacity-disabled: 0.25 !default;
         &.#{$name} {
           @include button-style($color, auto, auto);
         }
-      }
-      @else {
+      } @else {
         &.#{$name} {
           @include button-hollow-style($color);
         }

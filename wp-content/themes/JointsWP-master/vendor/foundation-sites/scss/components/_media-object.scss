@@ -33,8 +33,7 @@ $mediaobject-image-width-stacked: 100% !default;
 @mixin media-object-section($padding: $mediaobject-section-padding) {
   @if $global-flexbox {
     flex: 0 0 auto;
-  }
-  @else {
+  } @else {
     display: table-cell;
     vertical-align: top;
   }
@@ -56,8 +55,7 @@ $mediaobject-image-width-stacked: 100% !default;
   @if $global-flexbox {
     flex-basis: 100%;
     max-width: 100%;
-  }
-  @else {
+  } @else {
     display: block;
   }
 
@@ -95,8 +93,7 @@ $mediaobject-image-width-stacked: 100% !default;
       &.main-section {
         flex: 1 1 0px;
       }
-    }
-    @else {
+    } @else {
       &.middle {
         vertical-align: middle;
       }

@@ -37,8 +37,7 @@ $topbar-unstack-breakpoint: medium !default;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-  }
-  @else {
+  } @else {
     @include clearfix;
   }
 
@@ -85,8 +84,7 @@ $topbar-unstack-breakpoint: medium !default;
       flex: 0 0 100%;
       max-width: 100%;
     }
-  }
-  @else {
+  } @else {
     // Sub-sections
     .top-bar-left,
     .top-bar-right {
@@ -105,8 +103,7 @@ $topbar-unstack-breakpoint: medium !default;
     .top-bar-right {
       flex: 1 1 0px;
     }
-  }
-  @else {
+  } @else {
     .top-bar-left,
     .top-bar-right {
       width: auto;
@@ -149,8 +146,7 @@ $topbar-unstack-breakpoint: medium !default;
     .top-bar-right {
       flex: 0 0 auto;
     }
-  }
-  @else {
+  } @else {
     .top-bar-title {
       float: left;
       margin-right: $topbar-title-spacing;

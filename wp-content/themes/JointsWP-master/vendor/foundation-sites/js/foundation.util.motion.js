@@ -1,99 +1,104 @@
 'use strict';
 
-!function($) {
+!function ($) {
 
-/**
- * Motion module.
- * @module foundation.motion
- */
+    /**
+     * Motion module.
+     * @module foundation.motion
+     */
 
-const initClasses   = ['mui-enter', 'mui-leave'];
-const activeClasses = ['mui-enter-active', 'mui-leave-active'];
+    const initClasses = ['mui-enter', 'mui-leave'];
+    const activeClasses = ['mui-enter-active', 'mui-leave-active'];
 
-const Motion = {
-  animateIn: function(element, animation, cb) {
-    animate(true, element, animation, cb);
-  },
+    const Motion = {
+        animateIn: function (element, animation, cb) {
+            animate(true, element, animation, cb);
+        },
 
-  animateOut: function(element, animation, cb) {
-    animate(false, element, animation, cb);
-  }
-}
-
-function Move(duration, elem, fn){
-  var anim, prog, start = null;
-  // console.log('called');
-
-  function move(ts){
-    if(!start) start = window.performance.now();
-    // console.log(start, ts);
-    prog = ts - start;
-    fn.apply(elem);
-
-    if(prog < duration){ anim = window.requestAnimationFrame(move, elem); }
-    else{
-      window.cancelAnimationFrame(anim);
-      elem.trigger('finished.zf.animate', [elem]).triggerHandler('finished.zf.animate', [elem]);
+        animateOut: function (element, animation, cb) {
+            animate(false, element, animation, cb);
+        }
     }
-  }
-  anim = window.requestAnimationFrame(move);
-}
 
-/**
- * Animates an element in or out using a CSS transition class.
- * @function
- * @private
- * @param {Boolean} isIn - Defines if the animation is in or out.
- * @param {Object} element - jQuery or HTML object to animate.
- * @param {String} animation - CSS class to use.
- * @param {Function} cb - Callback to run when animation is finished.
- */
-function animate(isIn, element, animation, cb) {
-  element = $(element).eq(0);
+    function Move(duration, elem, fn) {
+        var anim, prog, start = null;
+        // console.log('called');
 
-  if (!element.length) return;
+        function move(ts) {
+            if (!start) start = window.performance.now();
+            // console.log(start, ts);
+            prog = ts - start;
+            fn.apply(elem);
 
-  var initClass = isIn ? initClasses[0] : initClasses[1];
-  var activeClass = isIn ? activeClasses[0] : activeClasses[1];
+            if (prog < duration) {
+                anim = window.requestAnimationFrame(move, elem);
+            }
+            else {
+                window.cancelAnimationFrame(anim);
+                elem.trigger('finished.zf.animate', [elem]).triggerHandler('finished.zf.animate', [elem]);
+            }
+        }
 
-  // Set up the animation
-  reset();
+        anim = window.requestAnimationFrame(move);
+    }
 
-  element
-    .addClass(animation)
-    .css('transition', 'none');
+    /**
+     * Animates an element in or out using a CSS transition class.
+     * @function
+     * @private
+     * @param {Boolean} isIn - Defines if the animation is in or out.
+     * @param {Object} element - jQuery or HTML object to animate.
+     * @param {String} animation - CSS class to use.
+     * @param {Function} cb - Callback to run when animation is finished.
+     */
+    function animate(isIn, element, animation, cb) {
+        element = $(element).eq(0);
 
-  requestAnimationFrame(() => {
-    element.addClass(initClass);
-    if (isIn) element.show();
-  });
+        if (!element.length) return;
 
-  // Start the animation
-  requestAnimationFrame(() => {
-    element[0].offsetWidth;
-    element
-      .css('transition', '')
-      .addClass(activeClass);
-  });
+        var initClass = isIn ? initClasses[0] : initClasses[1];
+        var activeClass = isIn ? activeClasses[0] : activeClasses[1];
 
-  // Clean up the animation when it finishes
-  element.one(Foundation.transitionend(element), finish);
+        // Set up the animation
+        reset();
 
-  // Hides the element (for out animations), resets the element, and runs a callback
-  function finish() {
-    if (!isIn) element.hide();
-    reset();
-    if (cb) cb.apply(element);
-  }
+        element
+            .addClass(animation)
+            .css('transition', 'none');
 
-  // Resets transitions and removes motion-specific classes
-  function reset() {
-    element[0].style.transitionDuration = 0;
-    element.removeClass(`${initClass} ${activeClass} ${animation}`);
-  }
-}
+        requestAnimationFrame(() = > {
+            element.addClass(initClass);
+        if (isIn) element.show();
+    })
+        ;
 
-Foundation.Move = Move;
-Foundation.Motion = Motion;
+        // Start the animation
+        requestAnimationFrame(() = > {
+            element[0].offsetWidth;
+        element
+            .css('transition', '')
+            .addClass(activeClass);
+    })
+        ;
+
+        // Clean up the animation when it finishes
+        element.one(Foundation.transitionend(element), finish);
+
+        // Hides the element (for out animations), resets the element, and runs a callback
+        function finish() {
+            if (!isIn) element.hide();
+            reset();
+            if (cb) cb.apply(element);
+        }
+
+        // Resets transitions and removes motion-specific classes
+        function reset() {
+            element[0].style.transitionDuration = 0;
+            element.removeClass(`${initClass} ${activeClass} ${animation}`);
+        }
+    }
+
+    Foundation.Move = Move;
+    Foundation.Motion = Motion;
 
 }(jQuery);

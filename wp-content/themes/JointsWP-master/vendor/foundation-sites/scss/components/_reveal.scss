@@ -145,9 +145,15 @@ $reveal-overlay-background: rgba($black, 0.45) !default;
     }
 
     // Sizing classes
-    &.tiny  { @include reveal-modal-width(30%); }
-    &.small { @include reveal-modal-width(50%); }
-    &.large { @include reveal-modal-width(90%); }
+    &.tiny {
+      @include reveal-modal-width(30%);
+    }
+    &.small {
+      @include reveal-modal-width(50%);
+    }
+    &.large {
+      @include reveal-modal-width(90%);
+    }
 
     // Full-screen mode
     &.full {

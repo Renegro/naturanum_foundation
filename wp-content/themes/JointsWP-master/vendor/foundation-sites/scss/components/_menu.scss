@@ -48,8 +48,7 @@ $menu-icon-spacing: 0.25rem !default;
 
     @if $global-flexbox {
       flex: 0 0 auto;
-    }
-    @else {
+    } @else {
       display: table-cell;
       vertical-align: middle;
     }
@@ -77,8 +76,7 @@ $menu-icon-spacing: 0.25rem !default;
     > li {
       flex: 1 1 0px;
     }
-  }
-  @else {
+  } @else {
     width: 100%;
     display: table;
     table-layout: fixed;
@@ -95,14 +93,12 @@ $menu-icon-spacing: 0.25rem !default;
       > li {
         flex: 0 0 auto;
       }
-    }
-    @else {
+    } @else {
       > li {
         display: table-cell;
       }
     }
-  }
-  @else if $dir == vertical {
+  } @else if $dir == vertical {
     @if $global-flexbox {
       flex-wrap: wrap;
 
@@ -111,18 +107,16 @@ $menu-icon-spacing: 0.25rem !default;
         max-width: 100%;
       }
 
-      > li  > a {
+      > li > a {
         align-items: flex-start;
         justify-content: flex-start;
       }
-    }
-    @else {
+    } @else {
       > li {
         display: block;
       }
     }
-  }
-  @else {
+  } @else {
     @warn 'The direction used for menu-direction() must be horizontal or vertical.';
   }
 }
@@ -155,8 +149,7 @@ $menu-icon-spacing: 0.25rem !default;
       > li > a {
         display: flex;
       }
-    }
-    @else {
+    } @else {
       > li > a {
         img,
         i {
@@ -186,13 +179,11 @@ $menu-icon-spacing: 0.25rem !default;
         }
       }
     }
-  }
-  @else if $position == top {
+  } @else if $position == top {
     > li > a {
       @if $global-flexbox {
         flex-flow: column nowrap;
-      }
-      @else {
+      } @else {
         text-align: center;
       }
 
@@ -201,8 +192,7 @@ $menu-icon-spacing: 0.25rem !default;
         @if not $global-flexbox {
           display: block;
           margin: 0 auto $menu-icon-spacing;
-        }
-        @else {
+        } @else {
           align-self: stretch;
           text-align: center;
           margin-bottom: $menu-icon-spacing;
@@ -256,8 +246,7 @@ $menu-icon-spacing: 0.25rem !default;
     &.align-#{$global-right} {
       @if $global-flexbox {
         justify-content: flex-end;
-      }
-      @else {
+      } @else {
         @include clearfix;
 
         > li {

@@ -20,9 +20,9 @@
   }
 
   $keyframes: (
-    name: 'fade-#{$from}-to-#{$to}',
-    0: (opacity: $from),
-    100: (opacity: $to),
+          name: 'fade-#{$from}-to-#{$to}',
+          0: (opacity: $from),
+          100: (opacity: $to),
   );
 
   @return $keyframes;

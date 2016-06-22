@@ -11,7 +11,7 @@
   },
   "globals": {
     "Foundation": true
-    },
+  },
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,20 +24,32 @@
   "rules": {
     "block-scoped-var": 2,
     "camelcase": 2,
-    "comma-style": [2, "last"],
-    "curly": [0, "all"],
+    "comma-style": [
+      2,
+      "last"
+    ],
+    "curly": [
+      0,
+      "all"
+    ],
     "dot-notation": [
       2,
       {
         "allowKeywords": true
       }
     ],
-    "eqeqeq": [2, "allow-null"],
+    "eqeqeq": [
+      2,
+      "allow-null"
+    ],
     "guard-for-in": 2,
     "new-cap": 2,
     "no-bitwise": 2,
     "no-caller": 2,
-    "no-cond-assign": [2, "except-parens"],
+    "no-cond-assign": [
+      2,
+      "except-parens"
+    ],
     "no-debugger": 2,
     "no-empty": 2,
     "no-eval": 2,
@@ -57,9 +69,18 @@
     "no-unused-vars": 1,
     "no-with": 2,
     "quotes": 0,
-    "semi": [0, "never"],
-    "strict": [1, "global"],
+    "semi": [
+      0,
+      "never"
+    ],
+    "strict": [
+      1,
+      "global"
+    ],
     "valid-typeof": 2,
-    "wrap-iife": [2, "inside"]
+    "wrap-iife": [
+      2,
+      "inside"
+    ]
   }
 }

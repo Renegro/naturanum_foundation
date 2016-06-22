@@ -112,8 +112,7 @@ $maincontent-shadow: 0 0 10px rgba($black, 0.5) !default;
     left: -$size;
     top: 0;
     width: $size;
-  }
-  @else if $position == right {
+  } @else if $position == right {
     right: -$size;
     top: 0;
     width: $size;
@@ -124,8 +123,7 @@ $maincontent-shadow: 0 0 10px rgba($black, 0.5) !default;
     .is-open-#{$position} {
       @if $position == left {
         transform: translateX($size);
-      }
-      @else if $position == right {
+      } @else if $position == right {
         transform: translateX(-$size);
       }
     }
@@ -156,8 +154,12 @@ $maincontent-shadow: 0 0 10px rgba($black, 0.5) !default;
   .off-canvas {
     @include off-canvas-base;
 
-    &.position-left   { @include off-canvas-position(left); }
-    &.position-right  { @include off-canvas-position(right); }
+    &.position-left {
+      @include off-canvas-position(left);
+    }
+    &.position-right {
+      @include off-canvas-position(right);
+    }
   }
 
   // Reveal off-canvas menu on larger screens

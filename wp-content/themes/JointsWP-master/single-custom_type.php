@@ -14,29 +14,30 @@ single-bookmarks.php
 ?>
 
 <?php get_header(); ?>
-			
-<div id="content">
 
-	<div id="inner-content" class="row">
+    <div id="content">
 
-		<main id="main" class="large-8 medium-8 columns first" role="main">
-		
-		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-		    	<?php get_template_part( 'parts/loop', 'single' ); ?>
-		    					
-		    <?php endwhile; else : ?>
-		
-		   		<?php get_template_part( 'parts/content', 'missing' ); ?>
+        <div id="inner-content" class="row">
 
-		    <?php endif; ?>
+            <main id="main" class="large-8 medium-8 columns first" role="main">
 
-		</main> <!-- end #main -->
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<?php get_sidebar(); ?>
+                    <?php get_template_part('parts/loop', 'single'); ?>
 
-	</div> <!-- end #inner-content -->
+                <?php endwhile;
+                else : ?>
 
-</div> <!-- end #content -->
+                    <?php get_template_part('parts/content', 'missing'); ?>
+
+                <?php endif; ?>
+
+            </main> <!-- end #main -->
+
+            <?php get_sidebar(); ?>
+
+        </div> <!-- end #inner-content -->
+
+    </div> <!-- end #content -->
 
 <?php get_footer(); ?>

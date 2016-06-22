@@ -4,13 +4,10 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-
 // Sass utilities
 @import 'util/util';
-
 // Global variables and styles
 @import 'global';
-
 // Components
 @import 'grid/grid';
 @import 'typography/typography';
@@ -57,8 +54,7 @@
   @include foundation-global-styles;
   @if not $flex {
     @include foundation-grid;
-  }
-  @else {
+  } @else {
     @include foundation-flex-grid;
   }
   @include foundation-typography;

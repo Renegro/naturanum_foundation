@@ -22,26 +22,23 @@
   @if type-of($columns) == 'number' {
     @if unit($columns) == '%' {
       $width: $columns;
-    }
-    @else if $columns < 1 {
+    } @else if $columns < 1 {
       $width: percentage($columns);
-    }
-    @else {
+    } @else {
       $width: percentage($columns / $grid-column-count);
     }
   }
 
-  // Parsing "n of n" expressions
+    // Parsing "n of n" expressions
   @else if type-of($columns) == 'list' {
     @if length($columns) != 3 {
       @error 'Wrong syntax for grid-column(). Use the format "n of n".';
-    }
-    @else {
+    } @else {
       $width: percentage(nth($columns, 1) / nth($columns, 3));
     }
   }
 
-  // Anything else is incorrect
+    // Anything else is incorrect
   @else {
     @error 'Wrong syntax for grid-column(). Use a number, decimal, percentage, or "n of n".';
   }
@@ -70,8 +67,7 @@
         padding-right: $padding;
       }
     }
-  }
-  @else if type-of($gutter) == 'number' and strip-unit($gutter) > 0 {
+  } @else if type-of($gutter) == 'number' and strip-unit($gutter) > 0 {
     $padding: rem-calc($gutter) / 2;
     padding-left: $padding;
     padding-right: $padding;

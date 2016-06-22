@@ -67,8 +67,7 @@ $breadcrumbs-item-slash: true !default;
         top: 1px;
         opacity: 1;
       }
-    }
-    @else {
+    } @else {
       margin-#{$global-right}: $breadcrumbs-item-margin;
     }
   }

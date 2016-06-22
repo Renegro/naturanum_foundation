@@ -72,8 +72,7 @@ $pagination-arrows: true !default;
 
     @if $pagination-mobile-items {
       display: inline-block;
-    }
-    @else {
+    } @else {
       display: none;
 
       &:last-child,

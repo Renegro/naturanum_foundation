@@ -14,16 +14,16 @@
   // Rotation directions when hinging from back vs. front
   $rotation-amount: 90deg;
   $rotations-back: (
-    top: rotateX($rotation-amount * -1),
-    right: rotateY($rotation-amount * -1),
-    bottom: rotateX($rotation-amount),
-    left: rotateY($rotation-amount),
+          top: rotateX($rotation-amount * -1),
+          right: rotateY($rotation-amount * -1),
+          bottom: rotateX($rotation-amount),
+          left: rotateY($rotation-amount),
   );
   $rotations-from: (
-    top: rotateX($rotation-amount),
-    right: rotateY($rotation-amount),
-    bottom: rotateX($rotation-amount * -1),
-    left: rotateY($rotation-amount * -1),
+          top: rotateX($rotation-amount),
+          right: rotateY($rotation-amount),
+          bottom: rotateX($rotation-amount * -1),
+          left: rotateY($rotation-amount * -1),
   );
 
   // Rotation origin
@@ -56,9 +56,9 @@
   }
 
   $keyframes: (
-    name: 'hinge-#{$state}-#{$from}-#{$axis}-#{$turn-origin}',
-    0: (transform: $start, transform-origin: $origin),
-    100: (transform: $end),
+          name: 'hinge-#{$state}-#{$from}-#{$axis}-#{$turn-origin}',
+          0: (transform: $start, transform-origin: $origin),
+          100: (transform: $end),
   );
 
   @return $keyframes;

@@ -6,7 +6,7 @@
 /// @param {Duration} $duration [null] - Length (speed) of the transition.
 /// @param {Keyword|Function} $timing [null] - Easing of the transition.
 /// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
-@mixin mui-slide (
+@mixin mui-slide(
   $state: in,
   $direction: left,
   $amount: 100%,
