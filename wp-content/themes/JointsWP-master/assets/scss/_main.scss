@@ -4,12 +4,21 @@ Stylesheet: Main Stylesheet
 
 *************************************************/
 @import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,900italic,200,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+@mixin open_sans{
+  font-family: 'Open Sans', sans-serif;
+}
+@mixin exo_2{
+  font-family: 'Exo 2', sans-serif;
+}
 
 /*********************
 GENERAL STYLES
 *********************/
 body {
-
+  @include open_sans();
 }
 
 /*********************
@@ -28,6 +37,7 @@ a, a:visited {
 H1, H2, H3, H4, H5 P STYLES
 *********************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  @include exo_2;
 
   // Removing text decoration from all headline links
   a {
@@ -598,13 +608,28 @@ sidebar
 #sidebar1 {
   padding: rem-calc(0 20px);
   color: $white;
+  ul{
+    li{
+      a{
+        padding: rem-calc(5 10);
+        text-transform: uppercase;
+        color: #fff;
+        border-bottom: 1px solid rgba($white,.3);
+        display: block;
+        &:hover{
+          background: rgba($white,.2);
+        }
+      }
+    }
+  }
 }
 
 /*********************
 listing
 *********************/
 
-.archive {
+.archive,
+.home.page {
   #main {
     padding: 0;
     > header {
