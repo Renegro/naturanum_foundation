@@ -11,7 +11,7 @@ $grid_columns = 4; ?>
     <!--Item: -->
     <div class="large-3 medium-3 columns panel">
 
-        <?php $background = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full'); ?>
+        <?php $background = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium'); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
             <div class="article-bg" style="background-image: url('<?php echo $background[0]; ?>')"></div>
 

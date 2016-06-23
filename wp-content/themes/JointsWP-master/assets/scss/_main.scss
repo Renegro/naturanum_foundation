@@ -575,6 +575,7 @@ FOUNDATION STYLES
 .off-canvas-content {
   background-size: cover;
   min-height: 100vh;
+  background-position: 50% 50%;
 }
 
 /*********************
@@ -584,6 +585,10 @@ PLUGIN STYLES
 .gform_body ul {
   list-style: none outside none;
   margin: 0;
+}
+
+@mixin black-semitrans{
+  background: rgba($black, .7);
 }
 
 /*********************
@@ -604,7 +609,7 @@ listing
     padding: 0;
     > header {
       //position: absolute;
-      background: rgba($black, .7);
+      @include black-semitrans;
       color: $white;
       width: 100%;
       z-index: 2;
@@ -629,11 +634,14 @@ listing
       position: absolute;
       bottom: 0;
       width: 100%;
-      background: rgba($black, .7);
+      @include black-semitrans;
       opacity: 0;
       padding-left: rem-calc(20);
       padding-right: rem-calc(20);
       @include transition(all 0.7s);
+    }
+    .exif{
+      position: absolute;
     }
     a.article-link {
       display: block;
@@ -652,4 +660,26 @@ listing
       }
     }
   }
+}
+
+/*********************
+single
+*********************/
+
+.single-post{
+  .article-content{
+    position: absolute;
+    bottom:rem-calc(70);
+    right:rem-calc(30);
+    @include black-semitrans;
+    padding: rem-calc(20);
+  }
+  .exif{
+    @include layout-list();
+    li{
+      padding: rem-calc(10 0);
+      border-bottom: 1px dotted rgba($white, .5);
+    }
+  }
+
 }

@@ -18,6 +18,7 @@ TOOLS
   overflow: hidden;
 }
 
+
 /*********************
 COLORS
 *********************/
@@ -55,6 +56,16 @@ CSS3 GRADIENTS.
   background-image: -moz-linear-gradient(top, $from, $to);
   background-image: -o-linear-gradient(top, $from, $to);
   background-image: linear-gradient(to bottom, $from, $to);
+}
+
+/*********************
+helpers
+*********************/
+
+@mixin layout-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 
