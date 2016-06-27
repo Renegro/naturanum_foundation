@@ -23,22 +23,24 @@ Template Name: Frontpage
             );
             query_posts($args);
             ?>
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <div class="grid">
+                <div class="grid-sizer"></div>
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <!-- To see additional archive styles, visit the /parts directory -->
-                <?php get_template_part('parts/loop', 'archive-grid'); ?>
+                    <!-- To see additional archive styles, visit the /parts directory -->
+                    <?php get_template_part('parts/loop', 'archive-grid'); ?>
 
-            <?php endwhile; ?>
+                <?php endwhile; ?>
 
-                <?php joints_page_navi(); ?>
+                    <?php joints_page_navi(); ?>
 
-            <?php else : ?>
+                <?php else : ?>
 
-                <?php get_template_part('parts/content', 'missing'); ?>
+                    <?php get_template_part('parts/content', 'missing'); ?>
 
-            <?php endif; ?>
+                <?php endif; ?>
 
-
+            </div>
         </main> <!-- end #main -->
 
         <?php get_sidebar(); ?>

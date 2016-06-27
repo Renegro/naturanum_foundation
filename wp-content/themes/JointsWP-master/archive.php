@@ -10,21 +10,24 @@
                     <h1 class="page-title"><?php the_archive_title(); ?></h1>
                     <?php the_archive_description('<div class="taxonomy-description">', '</div>'); ?>
                 </header>
+                <div class="grid">
+                    <div class="grid-sizer"></div>
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <!-- To see additional archive styles, visit the /parts directory -->
 
-                    <!-- To see additional archive styles, visit the /parts directory -->
-                    <?php get_template_part('parts/loop', 'archive-grid'); ?>
+                            <?php get_template_part('parts/loop', 'archive-grid'); ?>
 
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
 
-                    <?php joints_page_navi(); ?>
+                        <?php joints_page_navi(); ?>
 
-                <?php else : ?>
+                    <?php else : ?>
 
-                    <?php get_template_part('parts/content', 'missing'); ?>
+                        <?php get_template_part('parts/content', 'missing'); ?>
 
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
 
             </main> <!-- end #main -->
 

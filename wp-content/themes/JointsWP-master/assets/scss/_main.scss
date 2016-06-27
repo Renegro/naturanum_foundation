@@ -7,10 +7,11 @@ Stylesheet: Main Stylesheet
 @import url(https://fonts.googleapis.com/css?family=Exo+2:400,900italic,200,600);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
-@mixin open_sans{
+@mixin open_sans {
   font-family: 'Open Sans', sans-serif;
 }
-@mixin exo_2{
+
+@mixin exo_2 {
   font-family: 'Exo 2', sans-serif;
 }
 
@@ -73,7 +74,16 @@ HEADER STYLES.off-canvas-content
   width: 100%;
   ul.off-canvas-list li {
     list-style: none;
-
+  }
+  .logo {
+    width: rem-calc(100);
+    height: rem-calc(100);
+    overflow: hidden;
+    border-radius: 50%;
+    a{
+      display: block;
+      padding: 0;
+    }
   }
 }
 
@@ -597,7 +607,7 @@ PLUGIN STYLES
   margin: 0;
 }
 
-@mixin black-semitrans{
+@mixin black-semitrans {
   background: rgba($black, .7);
 }
 
@@ -608,16 +618,16 @@ sidebar
 #sidebar1 {
   padding: rem-calc(0 20px);
   color: $white;
-  ul{
-    li{
-      a{
+  ul {
+    li {
+      a {
         padding: rem-calc(5 10);
         text-transform: uppercase;
         color: #fff;
-        border-bottom: 1px solid rgba($white,.3);
+        border-bottom: 1px solid rgba($white, .3);
         display: block;
-        &:hover{
-          background: rgba($white,.2);
+        &:hover {
+          background: rgba($white, .2);
         }
       }
     }
@@ -640,21 +650,22 @@ listing
       z-index: 2;
     }
   }
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+    @include breakpoint(medium) {
+      width: 33%;
+    }
+    @include breakpoint(large) {
+      width: 20%;
+    }
+  }
+  .grid-item {
+    border: rem-calc(5) solid transparent;
+    float: left;
+  }
   article {
     position: relative;
-    padding-top: 75%;
-    overflow: hidden;
-    .article-bg {
-      background-size: cover;
-      background-position: 50% 50%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      bottom: 0;
-      @include transform(scale(1.1, 1.1));
-      @include transition(all 0.7s);
-    }
     .article-header {
       position: absolute;
       bottom: 0;
@@ -665,8 +676,9 @@ listing
       padding-right: rem-calc(20);
       @include transition(all 0.7s);
     }
-    .exif{
+    .exif {
       position: absolute;
+      display: none;
     }
     a.article-link {
       display: block;
@@ -691,17 +703,17 @@ listing
 single
 *********************/
 
-.single-post{
-  .article-content{
+.single-post {
+  .article-content {
     position: absolute;
-    bottom:rem-calc(70);
-    right:rem-calc(30);
+    bottom: rem-calc(70);
+    right: rem-calc(30);
     @include black-semitrans;
     padding: rem-calc(20);
   }
-  .exif{
+  .exif {
     @include layout-list();
-    li{
+    li {
       padding: rem-calc(10 0);
       border-bottom: 1px dotted rgba($white, .5);
     }
